@@ -3,10 +3,10 @@ Php image resize for instagram
 
 # Setup
 
-include '../src/Resize.php';
-use MSC\Instaresize\Resize;
+composer require msc/instaresize
 
 # Usage
+use MSC\Instaresize\Resize;
 
 $resize = new Resize();
 
