@@ -1,0 +1,25 @@
+{
+    "name": "msc/instaresize",
+    "description": "PHP image resize for instagram",
+    "keywords":	["php", "image", "resize","instagram"],
+    "type": "library",
+    "homepage": "https://github.com/musacivak/instaresize",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Musa Civak",
+            "email": "musacivak50@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6",
+        "ext-curl": "*",
+        "ext-gd" : "*"
+    }
+}
