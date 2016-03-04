@@ -15,7 +15,7 @@
 	*/
 	class Resize
 	{
-		protected $sizes;
+	protected $sizes;
         protected $images;
         protected $width;
         protected $height;
