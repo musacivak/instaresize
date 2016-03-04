@@ -5,7 +5,7 @@ Php image resize for instagram
 
 composer require msc/instaresize dev-master
 
-#or
+or
 
 	"require": {
 		"msc/instaresize": "dev-master"
