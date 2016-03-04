@@ -1,5 +1,6 @@
 # instaresize
-Php image resize for instagram
+
+quick and easy image resizing class for instagram.
 
 # Setup
 
