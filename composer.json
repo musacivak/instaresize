@@ -11,13 +11,15 @@
             "email": "musacivak50@gmail.com"
         }
     ],
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
-    },
+	"autoload": {
+		"psr-4": {
+			"MSC\\Instaresize\\": "src"
+		}
+	},
     "require": {
         "php": ">=5.6",
         "ext-gd" : "*"
-    }
+    },
+    "minimum-stability": "dev",
+	"prefer-stable": true
 }
