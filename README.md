@@ -3,7 +3,13 @@ Php image resize for instagram
 
 # Setup
 
-composer require msc/instaresize
+composer require msc/instaresize dev-master
+
+#or
+
+	"require": {
+		"msc/instaresize": "dev-master"
+	},
 
 # Usage
 use MSC\Instaresize\Resize;
