@@ -132,10 +132,7 @@
                     } else {
                         $this->x = ($this->newWidth - 1080) / 2;
                     }
-                    if($this->width <= 1080)
-                    {
-                        $this->newWidth = $this->width;
-                    }
+
 
                     imagecopyresized($im, $this->images, $this->x, 0, 0, 0, $this->newWidth, 1349, $this->width, $this->height);
                 }
@@ -159,10 +156,7 @@
                         $this->x = ($this->newWidth - 640) / 2;
                     }
 
-                    if($this->width <= 640)
-                    {
-                        $this->newWidth = $this->width;
-                    }
+                
 
                     imagecopyresized($im, $this->images, $this->x, 0, 0, 0, $this->newWidth, 799, $this->width, $this->height);
                 }
