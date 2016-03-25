@@ -132,13 +132,9 @@
                     } else {
                         $this->x = ($this->newWidth - 1080) / 2;
                     }
-                    if($this->height < 1379)
+                    if($this->width <= 1080)
                     {
-                        $this->newHeight = $this->height;
-                    }
-                    else
-                    {
-                        $this->newHeight = 1379;
+                        $this->newWidth = $this->width;
                     }
 
                     imagecopyresized($im, $this->images, $this->x, 0, 0, 0, $this->newWidth, 1349, $this->width, $this->height);
@@ -161,6 +157,11 @@
                         $this->x = (640 - $this->newWidth) / 2;
                     } else {
                         $this->x = ($this->newWidth - 640) / 2;
+                    }
+
+                    if($this->width <= 640)
+                    {
+                        $this->newWidth = $this->width;
                     }
 
                     imagecopyresized($im, $this->images, $this->x, 0, 0, 0, $this->newWidth, 799, $this->width, $this->height);
