@@ -31,10 +31,7 @@
                     throw new \Exception("Error: You did not specify image.");
                     exit;
                 }
-                elseif(!file_exists($photo)){
-                    throw new \Exception("Error: Image not found");
-                    exit;
-                }
+
                 $this->sizes = @getimagesize($photo);
                 $this->width = $this->sizes['0'];
                 $this->height = $this->sizes['1'];
@@ -135,8 +132,16 @@
                     } else {
                         $this->x = ($this->newWidth - 1080) / 2;
                     }
+                    if($this->height < 1379)
+                    {
+                        $this->newHeight = $this->height;
+                    }
+                    else
+                    {
+                        $this->newHeight = 1379;
+                    }
 
-                    imagecopyresized($im, $this->images, $this->x, $this->y, 0, 0, $this->newWidth, 1349, $this->width, $this->height);
+                    imagecopyresized($im, $this->images, $this->x, 0, 0, 0, $this->newWidth, 1349, $this->width, $this->height);
                 }
                 elseif ($this->height > $this->width && $this->height <= 1100) {
                     $this->newHeight = round((640 / $this->width) * $this->height);
@@ -157,11 +162,13 @@
                     } else {
                         $this->x = ($this->newWidth - 640) / 2;
                     }
-                    imagecopyresized($im, $this->images, $this->x, $this->y, 0, 0, $this->newWidth, 799, $this->width, $this->height);
+
+                    imagecopyresized($im, $this->images, $this->x, 0, 0, 0, $this->newWidth, 799, $this->width, $this->height);
                 }
-                header('Content-Type: image/jpeg');
-                //$path = "yourAssetsDirectory/randomImagename.jpg";
-                return imagejpeg($im, null, 100); // if you to want save the image, delete "null" and write $path;
+                $uniqID = uniqid();
+                $path = "assets/images/$uniqID.jpg";
+                imagejpeg($im, $path, 100); // if you to want save the image, delete "null" and write $path;
+                return $path;
             }catch (\Exception $e) {
                 return $e->getMessage();
             }
