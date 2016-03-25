@@ -162,7 +162,7 @@
                 }
                 $uniqID = uniqid();
                 $path = "assets/images/$uniqID.jpg";
-                imagejpeg($im, $path, 100); // if you to want save the image, delete "null" and write $path;
+                imagejpeg($im, $path, 100);
                 return $path;
             }catch (\Exception $e) {
                 return $e->getMessage();
